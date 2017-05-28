@@ -1,4 +1,4 @@
-# [![PocketMine-MP Document Project](https://cloud.githubusercontent.com/assets/110953/11445049/f05512ba-9520-11e5-8fdb-8c8eb5f690d0.jpg)}
+# [![PocketMine-MP Document Project](https://github.com/Takesikaityo/pmmp-docs/blob/master/logo.png?raw=true)
 
 ## 概要
 
