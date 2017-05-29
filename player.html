@@ -252,55 +252,55 @@
           <td class="mdl-data-table__cell--non-numeric">clearCreativeItems()</td>
           <td>不要</td>
           <td>なし</td>
-          <td>準備中</td>
+          <td>クリエイティブアイテムを削除します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getCreativeItems</td>
           <td>不要</td>
           <td>準備中</td>
-          <td>準備中</td>
+          <td>クリエイティブアイテムを返します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">addCreativeItem(Item $item)</td>
-          <td>不要</td>
+          <td>Item $item</td>
           <td>なし</td>
-          <td>準備中</td>
+          <td>クリエイティブアイテムを追加します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">removeCreativeItem(Item $item)</td>
-          <td>不要</td>
+          <td>Item $item</td>
           <td>なし</td>
-          <td>準備中</td>
+          <td>指定したクリエイティブアイテムを削除します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getCreativeItemIndex(Item $item)</td>
-          <td>不要</td>
+          <td>Item $item</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setAutoJump($value)</td>
-          <td>不要</td>
+          <td>bool $value</td>
           <td>なし</td>
-          <td>準備中</td>
+          <td>自動ジャンプを有効にするか</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getPlayer()</td>
           <td>不要</td>
           <td>Player|null</td>
-          <td>準備中</td>
+          <td>プレイヤーのオブジェクト関連を取得する</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setAllowMovementCheats(</br>bool $value)</td>
-          <td>不要</td>
+          <td>bool $value</td>
           <td>なし</td>
           <td>準備中</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setAllowInstaBreak(</br>bool $value)</td>
-          <td>不要</td>
+          <td>bool $value</td>
           <td>なし</td>
-          <td>準備中</td>
+          <td>簡易破壊を許可するか</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getViewDistance()</td>
@@ -310,45 +310,45 @@
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setViewDistance(int $distance)</td>
-          <td>不要</td>
+          <td>int $distance</td>
           <td>なし</td>
           <td>準備中</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">canSee(Player $player)</td>
-          <td>不要</td>
+          <td>Player $player</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">hidePlayer(Player $player)</td>
-          <td>不要</td>
+          <td>Player $player</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">showPlayer(Player $player)</td>
-          <td>不要</td>
+          <td>Player $player</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isOnline()</td>
           <td>不要</td>
-          <td>準備中</td>
-          <td>準備中</td>
+          <td>bool</td>
+          <td>そのプレイヤーがオンラインがどうか</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isOp()</td>
           <td>不要</td>
-          <td>準備中</td>
-          <td>準備中</td>
+          <td>bool</td>
+          <td>そのプレイヤーがOPがどうか</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">setOp()</td>
-          <td>不要</td>
+          <td class="mdl-data-table__cell--non-numeric">setOp($value)</td>
+          <td>bool $value</td>
           <td>準備中</td>
-          <td>準備中</td>
+          <td>OP権限を付与/略奪する</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getId()</td>
@@ -557,13 +557,13 @@
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getX()</td>
           <td>不要</td>
-          <td>準備中</td>
+          <td>int</td>
           <td>プレイヤーのx座標を返します。</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getY()</td>
           <td>不要</td>
-          <td>準備中</td>
+          <td>int</td>
           <td>プレイヤーのy座標を返します。</td>
         </tr>
         <tr>
@@ -575,20 +575,20 @@
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getZ()</td>
           <td>不要</td>
-          <td>準備中</td>
+          <td>int</td>
           <td>プレイヤーのz座標を返します。</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isConnected()</td>
           <td>不要</td>
-          <td>準備中</td>
-          <td>準備中</td>
+          <td>bool</td>
+          <td>そのプレイヤーが接続されているかどうか</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setSpawn(Vector3 $pos)</td>
           <td>Vector3 $pos</td>
           <td>準備中</td>
-          <td>準備中</td>
+          <td>そのプレイヤーのスポーン地点をセット</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setMotion(Vector3 $mot)</td>
@@ -603,10 +603,10 @@
           <td>準備中</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">kick($reason = "", $isAdmin = true)</td>
-          <td>string $reason  bool</td>
+          <td class="mdl-data-table__cell--non-numeric">kick($reason,$isAdmin)</td>
+          <td>string $reason, bool $isadmin</td>
           <td>準備中</td>
-          <td>boolをfalseにすると</br>kicked by adminが消えます。</td>
+          <td>$isadminをfalseにすると</br>kicked by adminが消えます。</td>
         </tr>
         
         <tr>
