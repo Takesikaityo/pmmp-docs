@@ -65,6 +65,24 @@
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <h4>Title</h4>
+          <a>最初にPocketMine-MPをインストールしたフォルダーのpluginsの下に次のようにファイルを作る。</br></br>
+      Example</br>
+        ├── plugin.yml</br>
+        └── src── Example── Main.php</br>
+                plugin.ymlは次のように書く。</a>
+          <script src="http://gist-it.appspot.com/github/Takesikaityo/Basic-Plugin/blob/master/plugin.yml"></script>
+          <a>Main.phpは次のように書く</a>
+          <script src="http://gist-it.appspot.com/github/Takesikaityo/Basic-Plugin/blob/master/src/Example/Main.php"></script>
+          <a>これでPMMPを起動してください。</br>[Server thread/INFO]: Loading source plugin Example v1.0.0</br>
+[Server thread/INFO]: [Example] onLoad() has been called!</br>
+[Server thread/INFO]: Enabling Example v1.0.0</br>
+[Server thread/INFO]: [Example] onEnable() has been called!</br>
+makeplugin Example</br>
+[Server thread/INFO]: [DevTools] Adding plugin.yml</br>
+[Server thread/INFO]: [DevTools] Adding src/Example/Main.php
+[Server thread/INFO]: Phar plugin Example v1.0.0 has been created on /Pocketmine-MP/dev/plugins/DevTools//Example_v1.0.0.phar</br>
+
+これができたら、お疲れ様。次はEvent関係のPluginの作り方を説明します。</a>
         </div>
         <script src="../scripts/footer.js"></script>
       </main>
