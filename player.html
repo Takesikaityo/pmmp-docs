@@ -217,6 +217,7 @@
           <td>int</td>
           <td>プレイヤーのUUIDをを取得</td>
           </tr>
+          <tr>
           <td class="mdl-data-table__cell--non-numeric">setAllowFlight($value)</td>
           <td>bool $value</td>
           <td>なし</td>
@@ -298,7 +299,6 @@
           <td>不要</td>
           <td>int</td>
           <td>プレイヤーのy座標を返します。</td>
-          <td>経験値を取得します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getZ()</td>
@@ -326,7 +326,6 @@
           <td>string $message</td>
           <td>準備中</td>
           <td>Tip欄に送信(Popup欄の上)</td>
-          <td>経験値レベルを取得します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isFishing()</td>
@@ -351,6 +350,8 @@
           <td>String $subtitle</br>int $fedein</br>int $duration</br>int $fadeout</td>
           <td>準備中</td>
           <td>大きいPopupのサブタイトルを送信</td>
+          </tr>
+        <tr>
           <td class="mdl-data-table__cell--non-numeric">isXbox()</td>
           <td>不要</td>
           <td>bool</td>
@@ -382,8 +383,6 @@
           <td>int $gm</td>
           <td>なし</td>
           <td>プレイヤーのゲームモードを変更</td>
-          <td>String</td>
-          <td>プレイヤーのデバイスモデル名を取得</td>
         </tr>
         <td class="mdl-data-table__cell--non-numeric" colspan="3">
           ・体力
@@ -401,7 +400,6 @@
           <td>不要</td>
           <td>int</td>
           <td>プレイヤーの最大体力を返します。</td>
-          <td>ClientIdを取得</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setHealth($amount)</td>
@@ -414,8 +412,6 @@
           <td>不要</td>
           <td>permission[]</td>
           <td>pocketmine\permission\Permissible</td>
-          <td>int</td>
-          <td>ClientSecretを取得</td>
         </tr>
         <td class="mdl-data-table__cell--non-numeric" colspan="3">
           ・飛行
@@ -437,6 +433,10 @@
           <td>不要</td>
           <td>bool</td>
           <td>そのプレイヤーは飛行状態か</td>
+          <tr>
+          <td class="mdl-data-table__cell--non-numeric">getBanned()</td>
+          <td>不要</td>
+          <td>bool</td>
           <td>そのプレイヤーがBanされているか</td>
         </tr>
         <tr>
@@ -465,8 +465,6 @@
           <td>不要</td>
           <td>int</td>
           <td>経験値レベルを取得します</td>
-          <td>bool</td>
-          <td>Whitelistに入れられているか</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setWhitelisted($value)</td>
@@ -500,8 +498,6 @@
           <td>不要</td>
           <td>bool</td>
           <td>釣り状態か</td>
-          <td>なし</td>
-          <td>クリエイティブアイテムを削除します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getFishingHook()</td>
@@ -514,11 +510,15 @@
           <td>不要</td>
           <td>bool</td>
           <td>xboxログインしているか</td>
+          </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getCreativeItem(:)</td>
+          <td>Item $item</td>
           <td>準備中</td>
           <td>クリエイティブアイテムを返します</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">addCreativeItem(Item $item)</td>
+          <td class="mdl-data-table__cell--non-numeric">addCreativeItem($item)</td>
           <td>Item $item</td>
           <td>なし</td>
           <td>クリエイティブアイテムを追加します</td>
@@ -561,6 +561,8 @@
           <td>不要</td>
           <td>なし</td>
           <td>クリエイティブアイテムを削除します</td>
+          </tr>
+
           <td class="mdl-data-table__cell--non-numeric">removeCreativeItem(Item $item)</td>
           <td>Item $item</td>
           <td>なし</td>
