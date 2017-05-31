@@ -65,6 +65,56 @@
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <h4>Player関連</h4>
+          PlayerクラスはEntityクラスを継承しているため、Entityクラスの関数も使用可能です。</br>
+          ここに書いてあるものを使うには use pocketmine\Player; が必要です。
+          <style type="text/css">
+          body {
+            background: #eee;
+            }
+            table {
+              margin-top: 40px;
+              margin-left: auto;
+              margin-bottom: 40px;
+              margin-right: auto;
+              }
+          </style>
+          <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+      <thead>
+        <tr>
+          <th class="mdl-data-table__cell--non-numeric">関数名</th>
+          <th>パラメータ</th>
+          <th>説明</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getPlayer()</td>
+          <td>不要</td>
+          <td>プレイヤーのオブジェクト関連を取得する。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getEntity()</td>
+          <td>不要</td>
+          <td>Entityからプレイヤーのオブジェクト関連を取得する。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">$this->getServer()->getPlayer($name)</td>
+          <td>string $name</td>
+          <td>名前の途中まででも一致すれば、</br>プレイヤー名からプレイヤーの</br>オブジェクト関連を取得する。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">$this->getServer()->getPlayerExact($name)</td>
+          <td>string $name</td>
+          <td>完全一致すれば</br>プレイヤー名からプレイヤーの</br>オブジェクト関連を取得する。</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td class="mdl-data-table__cell--non-numeric" colspan="3">
+          これはまだ作成途中です。GithubでPullリクエストをして項目を増やしていきましょう！
+        </td>
+      </tfoot>
+    </table>
+    
           <style type="text/css">
           body {
             background: #eee;
@@ -86,29 +136,62 @@
         </tr>
       </thead>
       <tbody>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・基本
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getAddress()</td>
           <td>不要</td>
           <td>string</td>
           <td>PlayerのIPアドレスが返されます。</td>
         </tr>
-      <tr>
-          <td class="mdl-data-table__cell--non-numeric">getGamemode()</td>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getPort()</td>
           <td>不要</td>
           <td>int</td>
+          <td>プレイヤーの使用しているPortを取得します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getName()</td>
+          <td>不要</td>
+          <td>string</td>
+          <td>プレイヤーの名前を返します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getGamemode()</td>
+          <td>不要</td>
+          <td>なし</td>
           <td>プレイヤーのゲームモードが数字で返されます。</td>
         </tr>
       <tr>
-          <td class="mdl-data-table__cell--non-numeric">setGamemode(int $gm)</td>
+          <td class="mdl-data-table__cell--non-numeric">setGamemode($gm)</td>
           <td>int $gm</td>
           <td>なし</td>
           <td>プレイヤーのゲームモードを変更</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getHealth()</td>
+          <td class="mdl-data-table__cell--non-numeric">getDisplayName()</td>
           <td>不要</td>
-          <td>int</td>
-          <td>体力を取得します。</td>
+          <td>string</td>
+          <td>chat内で使われる表示名が返されます。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setDisplayName($name)</td>
+          <td>string $name</td>
+          <td>なし</td>
+          <td>プレイヤーの表示名を変更</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getNameTag()</td>
+          <td>不要</td>
+          <td>string</td>
+          <td>プレイヤーにセットされているネームタグを取得します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getDeviceModel()</td>
+          <td>不要</td>
+          <td>String</td>
+          <td>プレイヤーのデバイスモデル名を取得</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getMaxHealth()</td>
@@ -123,18 +206,35 @@
           <td>プレイヤーの体力をセットします。</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getEffectivePermissions()</td>
+          <td class="mdl-data-table__cell--non-numeric">getOS()</td>
           <td>不要</td>
-          <td>permission[]</td>
-          <td>pocketmine\permission\Permissible のタイプ</td>
+          <td>String</td>
+          <td>プレイヤーのデバイスのOSを取得</td>
         </tr>
         <tr>
+          <td class="mdl-data-table__cell--non-numeric">getUniqueId()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>プレイヤーのUUIDをを取得</td>
+          </tr>
           <td class="mdl-data-table__cell--non-numeric">setAllowFlight($value)</td>
           <td>bool $value</td>
           <td>なし</td>
           <td>サバイバルでの飛行を許可するか</td>
         </tr>
         <tr>
+          <td class="mdl-data-table__cell--non-numeric">getClientId()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>ClientIdを取得</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getClientSecret()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>ClientSecretを取得</td>
+
+          <tr>
           <td class="mdl-data-table__cell--non-numeric">getAllowFlight()</td>
           <td>不要</td>
           <td>bool</td>
@@ -147,7 +247,30 @@
           <td>プレイヤーを飛行状態にするか</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">isFlying()</td>
+          <td class="mdl-data-table__cell--non-numeric">getLastDamageCause()</td>
+          <td>不要</td>
+          <td>int|EntityDamageEvent|null</td>
+          <td>最後のダメージを受けた原因を数値で返します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getFirstPlayed()</td>
+          <td>不要</td>
+          <td>int|double</td>
+          <td>初めて入った時の時刻を返します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getLastPlayed()</td>
+          <td>不要</td>
+          <td>int|double</td>
+          <td>最後に入った時の時刻を返します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getX()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>プレイヤーのx座標を返します。</td>
+          <tr>
+          <td class="mdl-data-table__cell--non-numeric">getX()</td>
           <td>不要</td>
           <td>bool</td>
           <td>そのプレイヤーは飛行状態か</td>
@@ -171,6 +294,167 @@
           <td>経験値レベルを追加します</td>
         </tr>
         <tr>
+          <td class="mdl-data-table__cell--non-numeric">getY()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>プレイヤーのy座標を返します。</td>
+          <td>経験値を取得します</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getZ()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>プレイヤーのz座標を返します。</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・送信系
+        </td>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendMessage($message)</td>
+          <td>string $message</td>
+          <td>準備中</td>
+          <td>プレイヤーにメッセージを送信します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendPopup($message, $subtitle = "")</td>
+          <td>string $message</td>
+          <td>準備中</td>
+          <td>Popup欄に送信</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendTip($message)</td>
+          <td>string $message</td>
+          <td>準備中</td>
+          <td>Tip欄に送信(Popup欄の上)</td>
+          <td>経験値レベルを取得します</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">isFishing()</td>
+          <td>不要</td>
+          <td>bool</td>
+          <td>釣り状態か</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendWhisper($sender, $message)</td>
+          <td>不要</td>
+          <td>bool</td>
+          <td>準備中</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendTitle($title,$subtitle,</br>$fadein,$duration,$fadeout)</td>
+          <td>String $title </br>String $subtitle</br>int $fedein</br>int $duration</br>int $fadeout </td>
+          <td>準備中</td>
+          <td>大きいPopupを送信</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendSubTitle($subtitle,$fadein,</br>$duration,$fadeout)</td>
+          <td>String $subtitle</br>int $fedein</br>int $duration</br>int $fadeout</td>
+          <td>準備中</td>
+          <td>大きいPopupのサブタイトルを送信</td>
+          <td class="mdl-data-table__cell--non-numeric">isXbox()</td>
+          <td>不要</td>
+          <td>bool</td>
+          <td>xboxログインしているか</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">removeTitle()</td>
+          <td>不要</td>
+          <td>準備中</td>
+          <td>現在表示中のTitleを削除します。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">transfer($address,$port)</td>
+          <td>String $address</td>
+          <td>準備中</td>
+          <td>指定したIPのサーバーに転送</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・ゲームモード
+        </td>
+      <tr>
+          <td class="mdl-data-table__cell--non-numeric">getGamemode()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>プレイヤーのゲームモードが数字で返されます。</td>
+        </tr>
+      <tr>
+          <td class="mdl-data-table__cell--non-numeric">setGamemode(int $gm)</td>
+          <td>int $gm</td>
+          <td>なし</td>
+          <td>プレイヤーのゲームモードを変更</td>
+          <td>String</td>
+          <td>プレイヤーのデバイスモデル名を取得</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="3">
+          ・体力
+        </td>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getHealth()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>体力を取得します。</td>
+          <td>String</td>
+          <td>プレイヤーのデバイスのOSを取得</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getMaxHealth()</td>
+          <td>不要</td>
+          <td>int</td>
+          <td>プレイヤーの最大体力を返します。</td>
+          <td>ClientIdを取得</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setHealth($amount)</td>
+          <td>int $amount</td>
+          <td>int</td>
+          <td>プレイヤーの体力をセットします。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getEffectivePermissions()</td>
+          <td>不要</td>
+          <td>permission[]</td>
+          <td>pocketmine\permission\Permissible</td>
+          <td>int</td>
+          <td>ClientSecretを取得</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="3">
+          ・飛行
+        </td>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getAllowFlight()</td>
+          <td>不要</td>
+          <td>bool</td>
+          <td>サバイバルでの飛行が許可されているか</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setAllowFlight($value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>サバイバルでの飛行を許可するか</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">isFlying()</td>
+          <td>不要</td>
+          <td>bool</td>
+          <td>そのプレイヤーは飛行状態か</td>
+          <td>そのプレイヤーがBanされているか</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setBanned($value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>プレイヤーをBanします</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setFlying(bool $value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>プレイヤーを飛行状態にするか</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・経験値
+        </td>
+       <tr>
           <td class="mdl-data-table__cell--non-numeric">getExp()</td>
           <td>不要</td>
           <td>int</td>
@@ -181,12 +465,43 @@
           <td>不要</td>
           <td>int</td>
           <td>経験値レベルを取得します</td>
+          <td>bool</td>
+          <td>Whitelistに入れられているか</td>
         </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setWhitelisted($value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>Whitelistに追加</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setExp(int $exp)</td>
+          <td>int $exp</td>
+          <td>なし</td>
+          <td>経験値をセットします</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setExpLevel(int $level)</td>
+          <td>int $level</td>
+          <td>なし</td>
+          <td>経験値Levelをセットします</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">addExpLevel(int $level)</td>
+          <td>int $level</td>
+          <td>なし</td>
+          <td>経験値レベルを追加します</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・編集中
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isFishing()</td>
           <td>不要</td>
           <td>bool</td>
           <td>釣り状態か</td>
+          <td>なし</td>
+          <td>クリエイティブアイテムを削除します</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getFishingHook()</td>
@@ -199,31 +514,18 @@
           <td>不要</td>
           <td>bool</td>
           <td>xboxログインしているか</td>
+          <td>準備中</td>
+          <td>クリエイティブアイテムを返します</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getDeviceModel()</td>
-          <td>不要</td>
-          <td>String</td>
-          <td>プレイヤーのデバイスモデル名を取得</td>
+          <td class="mdl-data-table__cell--non-numeric">addCreativeItem(Item $item)</td>
+          <td>Item $item</td>
+          <td>なし</td>
+          <td>クリエイティブアイテムを追加します</td>
         </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getOS()</td>
-          <td>不要</td>
-          <td>String</td>
-          <td>プレイヤーのデバイスのOSを取得</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getClientId()</td>
-          <td>不要</td>
-          <td>int</td>
-          <td>ClientIdを取得</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getClientSecret()</td>
-          <td>不要</td>
-          <td>int</td>
-          <td>ClientSecretを取得</td>
-        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・Ban関係
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isBanned()</td>
           <td>不要</td>
@@ -236,6 +538,9 @@
           <td>なし</td>
           <td>プレイヤーをBanします</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・Whitelist関係
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isWhitelisted()</td>
           <td>不要</td>
@@ -248,25 +553,14 @@
           <td>なし</td>
           <td>Whitelistに追加</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・クリエイティブアイテム関係
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">clearCreativeItems()</td>
           <td>不要</td>
           <td>なし</td>
           <td>クリエイティブアイテムを削除します</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getCreativeItems</td>
-          <td>不要</td>
-          <td>準備中</td>
-          <td>クリエイティブアイテムを返します</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">addCreativeItem(Item $item)</td>
-          <td>Item $item</td>
-          <td>なし</td>
-          <td>クリエイティブアイテムを追加します</td>
-        </tr>
-        <tr>
           <td class="mdl-data-table__cell--non-numeric">removeCreativeItem(Item $item)</td>
           <td>Item $item</td>
           <td>なし</td>
@@ -285,8 +579,27 @@
           <td>自動ジャンプを有効にするか</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getPlayer()</td>
+          <td class="mdl-data-table__cell--non-numeric">getCreativeItems</td>
           <td>不要</td>
+          <td>準備中</td>
+          <td>クリエイティブアイテムを返します</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">addCreativeItem($item)</td>
+          <td>Item $item</td>
+          <td>なし</td>
+          <td>クリエイティブアイテムを追加します</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">removeCreativeItem($item)</td>
+          <td>Item $item</td>
+          <td>なし</td>
+          <td>指定したクリエイティブアイテムを削除します</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getCreativeItemIndex($item)</td>
+          <td>Item $item</td>
+          <td>準備中</td>
           <td>Player|null</td>
           <td>プレイヤーのオブジェクト関連を取得する</td>
         </tr>
@@ -295,6 +608,25 @@
           <td>bool $value</td>
           <td>なし</td>
           <td>準備中</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・編集中
+        </td>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setAutoJump($value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>自動ジャンプを有効にするか</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setAllowMovementCheats(</br>bool $value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>準備中</td>
+          <td class="mdl-data-table__cell--non-numeric">setAllowInstaBreak(</br>bool $value)</td>
+          <td>bool $value</td>
+          <td>なし</td>
+          <td>簡易破壊を許可するか</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">setAllowInstaBreak(</br>bool $value)</td>
@@ -338,6 +670,9 @@
           <td>bool</td>
           <td>そのプレイヤーがオンラインがどうか</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・OP関係
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">isOp()</td>
           <td>不要</td>
@@ -355,6 +690,33 @@
           <td>不要</td>
           <td>int</td>
           <td>準備中</td>
+        </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          Vevtor3 関係
+        </td>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setSpawn(Vector3 $pos)</td>
+          <td>Vector3 $pos</td>
+          <td>準備中</td>
+          <td>そのプレイヤーのスポーン地点をセット</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">setMotion(Vector3 $mot)</td>
+          <td>Vector3 $mot</td>
+          <td>準備中</td>
+          <td>準備中</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">sendPosition(Vector3 $pos)</td>
+          <td>Vector3 $pos</td>
+          <td>準備中</td>
+          <td>準備中</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">teleport(Vector3 $pos)</td>
+          <td>Vector3 $pos</td>
+          <td>準備中</td>
+          <td>指定した座標にテレポートさせます。</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getIntermediateWithXValue(</br>Vector3 $v,$x)</td>
@@ -374,38 +736,21 @@
           <td>Vector3</td>
           <td>このVectorと渡されたVectorの間の線に沿った</br>2番目のパラメータに等しいz値を持つ</br>新しいVectorを返します。可能でない場合はnullを返します。</td>
         </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getInventory()</td>
-          <td>不要</td>
-          <td>Inventory</td>
-          <td>インベントリのオブジェクト関連を取得する。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getLastDamageCause()</td>
-          <td>不要</td>
-          <td>int|EntityDamageEvent|null</td>
-          <td>最後のダメージを受けた原因を数値で返します。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getFirstPlayed()</td>
-          <td>不要</td>
-          <td>int|double</td>
-          <td>初めて入った時の時刻を返します。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getLastPlayed()</td>
-          <td>不要</td>
-          <td>int|double</td>
-          <td>最後に入った時の時刻を返します。</td>
-        </tr>
+        
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・Level関係
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getLevel()</td>
           <td>不要</td>
           <td>Level</td>
           <td>Levelのオブジェクト関連を取得する。</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・編集中
+        </td>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getLineOfSight($maxDistance,</br>$maxLength = 0,</br>array $transparent=[])</td>
+          <td class="mdl-data-table__cell--non-numeric">getLineOfSight($maxDistance,</br>$maxLength,</br>$transparent)</td>
           <td>int	$maxDistance</br>int $maxLength</br>array	$transparent</td>
           <td>Block[]</td>
           <td>準備中</td>
@@ -428,47 +773,19 @@
           <td>準備中</td>
           <td>準備中</td>
         </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getName()</td>
-          <td>不要</td>
-          <td>string</td>
-          <td>プレイヤーの名前を返します。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getDisplayName()</td>
-          <td>不要</td>
-          <td>string</td>
-          <td>chat内で使われる表示名が返されます。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">setDisplayName($name)</td>
-          <td>string $name</td>
-          <td>準備中</td>
-          <td>プレイヤーの表示名を変更</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getNameTag()</td>
-          <td>不要</td>
-          <td>string</td>
-          <td>プレイヤーにセットされているネームタグを取得します。</td>
-        </tr>
+
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getPitch()</td>
           <td>不要</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">getPort()</td>
-          <td>不要</td>
-          <td>int</td>
-          <td>プレイヤーの使用しているPortを取得します。</td>
-        </tr>
+        
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getPosition()</td>
           <td>不要</td>
           <td>準備中</td>
-          <td>準備中</td>
+          <td>位置を取得</td>
         </tr>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getRemoveFormat()</td>
@@ -488,12 +805,18 @@
           <td>string</td>
           <td>短い保存名を返します。</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・Server関係
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getServer()</td>
           <td>不要</td>
           <td>Server</td>
           <td>サーバーのオブジェクトを返します。</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・編集中
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getSide($side,$step=1)</td>
           <td>int	$side	 int	$step</td>
@@ -513,8 +836,8 @@
           <td>スポーン地点を取得します。</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getTargetBlock($maxDistance,</br>array $transparent=[])</td>
-          <td>int	$maxDistance</br>array	$transparent</td>
+          <td class="mdl-data-table__cell--non-numeric">getTargetBlock($maxDistance,</br>$transparent)</td>
+          <td>int	$maxDistance</br>array $transparent</td>
           <td>Block</td>
           <td>準備中</td>
         </tr>
@@ -536,24 +859,36 @@
           <td>準備中</td>
           <td>準備中</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・Inventory関係
+        </td>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">getWindowId(</br>Inventory $inventory)</td>
+          <td class="mdl-data-table__cell--non-numeric">getInventory()</td>
+          <td>不要</td>
+          <td>Inventory</td>
+          <td>インベントリのオブジェクト関連を取得する。</td>
+        </tr>
+        <tr>
+          <td class="mdl-data-table__cell--non-numeric">getWindowId(</br>$inventory)</td>
           <td>Inventory	$inventory</td>
           <td>int</td>
           <td>準備中</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">addWindow(Inventory $inventory)</td>
+          <td class="mdl-data-table__cell--non-numeric">addWindow($inventory)</td>
           <td>Inventory $inventory</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
         <tr>
-          <td class="mdl-data-table__cell--non-numeric">removeWindow(Inventory $inventory)</td>
+          <td class="mdl-data-table__cell--non-numeric">removeWindow($inventory)</td>
           <td>Inventory $inventory</td>
           <td>準備中</td>
           <td>準備中</td>
         </tr>
+        <td class="mdl-data-table__cell--non-numeric" colspan="5">
+          ・編集中
+        </td>
         <tr>
           <td class="mdl-data-table__cell--non-numeric">getX()</td>
           <td>不要</td>
@@ -615,66 +950,7 @@
           <td>準備中</td>
           <td>準備中</td>
         </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendMessage($message)</td>
-          <td>string $message</td>
-          <td>準備中</td>
-          <td>プレイヤーにメッセージを送信します。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendPopup($message, $subtitle = "")</td>
-          <td>string $message</td>
-          <td>準備中</td>
-          <td>Popup欄に送信</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendTip($message)</td>
-          <td>string $message</td>
-          <td>準備中</td>
-          <td>Tip欄に送信(Popup欄の上)</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendWhisper($sender, $message)</td>
-          <td>不要</td>
-          <td>準備中</td>
-          <td>準備中</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendTitle($title, $subtitle = "", </br>$fadein = 20, $duration = 5, $fadeout = 20)</td>
-          <td>String $title </br>String $subtitle</br>int $fedein</br>int $duration</br>int $fadeout </td>
-          <td>準備中</td>
-          <td>大きいPopupを送信</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendSubTitle($subtitle, $fadein = 20, </br>$duration = 5, $fadeout = 20)</td>
-          <td>String $subtitle</br>int $fedein</br>int $duration</br>int $fadeout</td>
-          <td>準備中</td>
-          <td>大きいPopupのサブタイトルを送信</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">removeTitle()</td>
-          <td>不要</td>
-          <td>準備中</td>
-          <td>現在表示中のTitleを削除します。</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">sendPosition(Vector3 $pos)</td>
-          <td>Vector3 $pos</td>
-          <td>準備中</td>
-          <td>準備中</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">transfer($address, $port = 19132)</td>
-          <td>String $address</td>
-          <td>準備中</td>
-          <td>指定したIPのサーバーに転送</td>
-        </tr>
-        <tr>
-          <td class="mdl-data-table__cell--non-numeric">teleport(Vector3 $pos)</td>
-          <td>Vector3 $pos</td>
-          <td>準備中</td>
-          <td>指定した座標にテレポートさせます。</td>
-        </tr>
+        
       </tbody>
       <tfoot>
         <td class="mdl-data-table__cell--non-numeric" colspan="3">
